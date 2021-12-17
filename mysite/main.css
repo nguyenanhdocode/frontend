@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Lato&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --link-color: #32C1CD;
+}
+
+body {
+    font-family: Lato, sans-serif;
+    font-size: 62.5%;
+}
+
+/* GLOBAL CSS */
+a {
+    text-decoration: none;
+    color: #32C1CD;
+}
+
+/* NAV */
+
+.nav {
+    height: 50px;
+    background-color: #333333;
+    margin: 5px;
+    display: flex;
+    border-radius: 8px;
+    position: fixed;
+    width: calc(100% - 10px);
+    opacity: 0.8;
+}
+
+.nav-menu {
+    display: flex;
+}
+
+/* LOGO */
+.logo h1 {
+    font-family: Comfortaa, sans-serif;
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin: 12px;
+}
+
+/* NAV MENU */
+.nav-menu {
+    list-style: none;
+    flex: 1;
+    justify-content: center;
+}
+
+.nav-menu__item a {
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: #ffffff;
+}
+
+.nav-menu__item {
+    min-width: 100px;
+    text-align: center;
+    line-height: 50px;
+}
+
+.nav-menu__item--active a{
+    color: var(--link-color);
+}
+
+#menu-button {
+    margin: 11px;
+    position: relative;
+    display: none;
+}
+
+#menu-button img{
+    width: 24px;
+}
+
+#nav-menu-switch:checked + .nav-menu {
+    position: absolute;
+    top: 50px;
+    display: block;
+    background-color: #444;
+    width: 100%;
+    margin: 3px 0 0 0;
+    border-radius: 8px;
+    opacity: 0.9;
+    animation: fadedIn .4s linear forwards;
+}
+
+@keyframes fadedIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.9;
+    }
+}
+@keyframes fadeinout {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+
+/* BIG IMAGE */
+.bigimage {
+    width: 100%;
+    top: 0;
+}
+
+
+/* BOTTOM NOFIFY */
+
+.bottom-notify {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    min-height: 90px;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottom-notify p {
+    color: #fafafa;
+    font-size: 1.0rem;
+    padding: 10px;
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 746px) {
+    .nav {
+        justify-content: space-between;
+        opacity: 1;
+    }
+    .nav-menu {
+        display: none;
+    }
+
+    #menu-button {
+        display: block;
+    }
+}
